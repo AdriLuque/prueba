@@ -27,5 +27,5 @@ jobs:
     - name: Cálculo de cubrimiento
         id: cubrimiento
         run: |
-          coverage run -m unittest tests/test_persona.py
+          coverage run -m unittest tests/persona_test_case.py
           coverage report -m
