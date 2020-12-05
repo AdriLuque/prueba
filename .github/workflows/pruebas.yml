@@ -1,0 +1,20 @@
+name: Pruebas unitarias
+on:
+  push:
+    branches: [ main ]
+jobs:
+  job1:
+    name: Pruebas
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout de repositorio
+      uses: actions/checkout@v2
+
+    - name: Configuración de entorno de python
+      uses: actions/setup-python@v2
+      with:
+          python-version: '3.6'
+
+    - name: Correr pruebas
+      id: correr-pruebas
+      run: python -m unittest -v tests/persona_test_case.py
